@@ -47,9 +47,16 @@ void GLWidget::paintGL(){
 
     const int magicConst = 30;
 
+    glLineWidth(3.0f);
+    qglColor(Qt::red);
+
+
     for(int i = 0; i<points.size(); i++){
         for(int j = 0; j<points.at(0).size(); j++){
             points[i][j] = points[i][j]*magicConst;
+            Primitives::DrawCircle(points[i][j].x(),
+                                   points[i][j].y(),
+                                   points[i][j].z(), 1);
         }
     }
 
